@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proj_roupas/components/appDrawer_components.dart';
 import 'package:proj_roupas/components/contador_items_carrinho.dart';
 import 'package:proj_roupas/components/product_grid.dart';
 import 'package:proj_roupas/models/cart_model.dart';
@@ -21,6 +22,7 @@ class _ProductsOverviewPageState extends State<ProductsOverviewPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(),
         appBar: AppBar(
           title: const Text('Minha loja'),
           actions: [

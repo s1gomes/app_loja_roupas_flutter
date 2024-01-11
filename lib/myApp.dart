@@ -2,10 +2,12 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:proj_roupas/models/cart_model.dart';
+import 'package:proj_roupas/models/order_list_model.dart';
 import 'package:proj_roupas/models/product_list_model.dart';
 import 'package:proj_roupas/models/product_model.dart';
 import 'package:proj_roupas/pages/cart_page.dart';
 import 'package:proj_roupas/pages/counter_page.dart';
+import 'package:proj_roupas/pages/orders_page.dart';
 import 'package:proj_roupas/pages/product_detail_page.dart';
 import 'package:proj_roupas/pages/products_overview_page.dart';
 import 'package:proj_roupas/utils/app_routes.dart';
@@ -42,11 +44,14 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider(
           create: (_) => ProductList(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => OrderList(),
+        ),
 
 
       ],
       child: MaterialApp(
-        home: ProductsOverviewPage(),
+        // home: ProductsOverviewPage(),
         debugShowCheckedModeBanner: false,
         title: 'Roupas',
         theme: ThemeData(
@@ -73,6 +78,7 @@ class _MyAppState extends State<MyApp> {
           AppRoutes.HOME: (ctx) => ProductsOverviewPage(),
           AppRoutes.PRODUCT_DETAIL: (ctx) => ProductDetailPage(),
           AppRoutes.CART: (ctx) => CartPage(),
+          AppRoutes.ORDERS: (ctx) => OrdersPage(),
         },
       ),
     );
