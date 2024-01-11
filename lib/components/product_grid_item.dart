@@ -4,8 +4,8 @@ import 'package:proj_roupas/models/product_model.dart';
 import 'package:proj_roupas/utils/app_routes.dart';
 import 'package:provider/provider.dart';
 
-class ProductItem extends StatelessWidget {
-  const ProductItem({super.key});
+class ProductGridItem extends StatelessWidget {
+  const ProductGridItem({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +33,30 @@ class ProductItem extends StatelessWidget {
                 product.name,
                 textAlign: TextAlign.center,
               ),
+              // button to add product to cart
               trailing: IconButton(
                 onPressed: () {
                   cart.addItem(product);
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    backgroundColor: Colors.green,
+                    content: Text('Produto adicionado com sucesso.', style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18
+                    )),
+                    duration: Duration(seconds: 3),
+                    action: SnackBarAction(
+                      label: 'DESFAZER',
+                      onPressed: () {
+                        print('DESFAZER');
+                      },
+                    ),
+                  ));
                 },
                 icon: const Icon(Icons.shopping_cart),
                 color: Colors.amber,
               ),
             ),
+            // open product detail when clicking the image
             child: GestureDetector(
               child: Image.network(
                 product.imageUrl,
