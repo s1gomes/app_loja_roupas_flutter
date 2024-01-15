@@ -9,6 +9,8 @@ import 'package:proj_roupas/pages/cart_page.dart';
 import 'package:proj_roupas/pages/counter_page.dart';
 import 'package:proj_roupas/pages/orders_page.dart';
 import 'package:proj_roupas/pages/product_detail_page.dart';
+import 'package:proj_roupas/pages/product_form_page.dart';
+import 'package:proj_roupas/pages/product_page.dart';
 import 'package:proj_roupas/pages/products_overview_page.dart';
 import 'package:proj_roupas/utils/app_routes.dart';
 import 'package:provider/provider.dart';
@@ -79,6 +81,8 @@ class _MyAppState extends State<MyApp> {
           AppRoutes.PRODUCT_DETAIL: (ctx) => ProductDetailPage(),
           AppRoutes.CART: (ctx) => CartPage(),
           AppRoutes.ORDERS: (ctx) => OrdersPage(),
+          AppRoutes.PRODUCTS: (ctx) => ProductPage(),
+          AppRoutes.PRODUCT_FORM: (ctx) => ProductFormPage(),
         },
       ),
     );

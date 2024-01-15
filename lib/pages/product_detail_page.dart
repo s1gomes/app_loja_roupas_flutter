@@ -20,9 +20,13 @@ class ProductDetailPage extends StatelessWidget {
                 height: 300,
                 width: double.infinity,
                 child: Image.network(product.imageUrl,
-                fit: BoxFit.cover),
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Image.asset("assets/images/product_image_not_available.png",
+                fit: BoxFit.cover,);
+                },),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 10), 
               Text('R\$ ${product.price}',
               style: const TextStyle(
                 color: Colors.black,
